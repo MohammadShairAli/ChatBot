@@ -14,10 +14,12 @@ def get_chatbot_response(user_input, session):
         return {"error": "No user input provided"}
 
 
-    chat_history = session.get("chat_history", [{"role": "system", "content": "You are an expert Python programmer. "
-            "Always answer with correct Python code only. "
-            "No output only code"
-            "Do not explain, just return runnable code"}])
+    chat_history = session.get("chat_history", [{"role": "system", "content": (" ").join([
+        "you are a helping assistent", 
+        "help and remain calmn and pleasing",
+        "dont introduce yourself"
+        ])}])
+    
     chat_history.append({"role": "user", "content": user_input})
 
     try:
